@@ -450,35 +450,25 @@ sessions = {}
 
 if __name__ == "__main__":
 
+    import os
+
+    port = int(
+        os.environ.get(
+            "PORT",
+            5000
+        )
+    )
+
     print()
-    print(
-        "========================================"
-    )
-
-    print(
-        "       INTERVEXA BACKEND SERVER"
-    )
-
-    print(
-        "========================================"
-    )
-
-    print(
-        "Server running at:"
-    )
-
-    print(
-        "http://127.0.0.1:5000"
-    )
-
-    print(
-        "========================================"
-    )
-
+    print("========================================")
+    print("       INTERVEXA BACKEND SERVER")
+    print("========================================")
+    print(f"Server running on port: {port}")
+    print("========================================")
     print()
 
     app.run(
-        host="127.0.0.1",
-        port=5000,
-        debug=True
+        host="0.0.0.0",
+        port=port,
+        debug=False
     )
