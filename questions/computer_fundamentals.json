@@ -1,0 +1,234 @@
+[
+    {
+        "id": 1,
+        "question": "What is an operating system and what are its main functions?",
+        "difficulty": "easy",
+        "topic": "Computer Fundamentals",
+        "expected_concepts": [
+            "operating system",
+            "process management",
+            "memory management",
+            "file management"
+        ]
+    },
+    {
+        "id": 2,
+        "question": "What is the difference between a process and a thread?",
+        "difficulty": "medium",
+        "topic": "Computer Fundamentals",
+        "expected_concepts": [
+            "process",
+            "thread",
+            "memory",
+            "execution"
+        ]
+    },
+    {
+        "id": 3,
+        "question": "What is multitasking in an operating system?",
+        "difficulty": "easy",
+        "topic": "Computer Fundamentals",
+        "expected_concepts": [
+            "multitasking",
+            "process",
+            "CPU"
+        ]
+    },
+    {
+        "id": 4,
+        "question": "What is virtual memory?",
+        "difficulty": "medium",
+        "topic": "Computer Fundamentals",
+        "expected_concepts": [
+            "virtual memory",
+            "RAM",
+            "disk",
+            "memory management"
+        ]
+    },
+    {
+        "id": 5,
+        "question": "What is the difference between RAM and ROM?",
+        "difficulty": "easy",
+        "topic": "Computer Fundamentals",
+        "expected_concepts": [
+            "RAM",
+            "ROM",
+            "volatile",
+            "non-volatile"
+        ]
+    },
+    {
+        "id": 6,
+        "question": "What is a CPU and what are its major components?",
+        "difficulty": "easy",
+        "topic": "Computer Fundamentals",
+        "expected_concepts": [
+            "CPU",
+            "ALU",
+            "control unit",
+            "registers"
+        ]
+    },
+    {
+        "id": 7,
+        "question": "What is the difference between a compiler and an interpreter?",
+        "difficulty": "easy",
+        "topic": "Computer Fundamentals",
+        "expected_concepts": [
+            "compiler",
+            "interpreter",
+            "translation"
+        ]
+    },
+    {
+        "id": 8,
+        "question": "What is object-oriented programming?",
+        "difficulty": "easy",
+        "topic": "Computer Fundamentals",
+        "expected_concepts": [
+            "OOP",
+            "class",
+            "object",
+            "encapsulation"
+        ]
+    },
+    {
+        "id": 9,
+        "question": "What are the four main principles of object-oriented programming?",
+        "difficulty": "medium",
+        "topic": "Computer Fundamentals",
+        "expected_concepts": [
+            "encapsulation",
+            "inheritance",
+            "polymorphism",
+            "abstraction"
+        ]
+    },
+    {
+        "id": 10,
+        "question": "What is a database?",
+        "difficulty": "easy",
+        "topic": "Computer Fundamentals",
+        "expected_concepts": [
+            "database",
+            "data",
+            "organized collection"
+        ]
+    },
+    {
+        "id": 11,
+        "question": "What is a DBMS?",
+        "difficulty": "easy",
+        "topic": "Computer Fundamentals",
+        "expected_concepts": [
+            "DBMS",
+            "database management",
+            "data"
+        ]
+    },
+    {
+        "id": 12,
+        "question": "What is the difference between SQL and NoSQL databases?",
+        "difficulty": "medium",
+        "topic": "Computer Fundamentals",
+        "expected_concepts": [
+            "SQL",
+            "NoSQL",
+            "relational",
+            "non-relational"
+        ]
+    },
+    {
+        "id": 13,
+        "question": "What is a primary key in a database?",
+        "difficulty": "easy",
+        "topic": "Computer Fundamentals",
+        "expected_concepts": [
+            "primary key",
+            "unique",
+            "identify record"
+        ]
+    },
+    {
+        "id": 14,
+        "question": "What is normalization in DBMS?",
+        "difficulty": "medium",
+        "topic": "Computer Fundamentals",
+        "expected_concepts": [
+            "normalization",
+            "redundancy",
+            "database"
+        ]
+    },
+    {
+        "id": 15,
+        "question": "What is a computer network?",
+        "difficulty": "easy",
+        "topic": "Computer Fundamentals",
+        "expected_concepts": [
+            "network",
+            "devices",
+            "communication"
+        ]
+    },
+    {
+        "id": 16,
+        "question": "What is the difference between TCP and UDP?",
+        "difficulty": "medium",
+        "topic": "Computer Fundamentals",
+        "expected_concepts": [
+            "TCP",
+            "UDP",
+            "reliable",
+            "connection"
+        ]
+    },
+    {
+        "id": 17,
+        "question": "What is an IP address?",
+        "difficulty": "easy",
+        "topic": "Computer Fundamentals",
+        "expected_concepts": [
+            "IP address",
+            "network",
+            "device"
+        ]
+    },
+    {
+        "id": 18,
+        "question": "What is DNS and why is it used?",
+        "difficulty": "medium",
+        "topic": "Computer Fundamentals",
+        "expected_concepts": [
+            "DNS",
+            "domain name",
+            "IP address"
+        ]
+    },
+    {
+        "id": 19,
+        "question": "What is HTTP and HTTPS?",
+        "difficulty": "medium",
+        "topic": "Computer Fundamentals",
+        "expected_concepts": [
+            "HTTP",
+            "HTTPS",
+            "communication",
+            "encryption"
+        ]
+    },
+    {
+        "id": 20,
+        "question": "What happens when you enter a URL into a web browser and press Enter?",
+        "difficulty": "hard",
+        "topic": "Computer Fundamentals",
+        "expected_concepts": [
+            "DNS",
+            "TCP",
+            "HTTP",
+            "server",
+            "browser"
+        ]
+    }
+]

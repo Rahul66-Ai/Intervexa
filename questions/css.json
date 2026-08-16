@@ -1,0 +1,237 @@
+[
+    {
+        "id": 1,
+        "question": "What is CSS and why is it used?",
+        "difficulty": "easy",
+        "topic": "CSS",
+        "expected_concepts": [
+            "Cascading Style Sheets",
+            "styling",
+            "presentation"
+        ]
+    },
+    {
+        "id": 2,
+        "question": "What are the different ways to apply CSS to an HTML document?",
+        "difficulty": "easy",
+        "topic": "CSS",
+        "expected_concepts": [
+            "inline",
+            "internal",
+            "external"
+        ]
+    },
+    {
+        "id": 3,
+        "question": "What is the CSS box model?",
+        "difficulty": "easy",
+        "topic": "CSS",
+        "expected_concepts": [
+            "content",
+            "padding",
+            "border",
+            "margin"
+        ]
+    },
+    {
+        "id": 4,
+        "question": "What is the difference between margin and padding?",
+        "difficulty": "easy",
+        "topic": "CSS",
+        "expected_concepts": [
+            "margin",
+            "padding",
+            "outside",
+            "inside"
+        ]
+    },
+    {
+        "id": 5,
+        "question": "What is CSS specificity?",
+        "difficulty": "medium",
+        "topic": "CSS",
+        "expected_concepts": [
+            "specificity",
+            "selector",
+            "priority"
+        ]
+    },
+    {
+        "id": 6,
+        "question": "What is the difference between class and ID selectors in CSS?",
+        "difficulty": "easy",
+        "topic": "CSS",
+        "expected_concepts": [
+            "class",
+            "id",
+            "selector"
+        ]
+    },
+    {
+        "id": 7,
+        "question": "What are CSS selectors?",
+        "difficulty": "easy",
+        "topic": "CSS",
+        "expected_concepts": [
+            "selector",
+            "element",
+            "class",
+            "id"
+        ]
+    },
+    {
+        "id": 8,
+        "question": "What is the difference between display: none and visibility: hidden?",
+        "difficulty": "medium",
+        "topic": "CSS",
+        "expected_concepts": [
+            "display",
+            "visibility",
+            "layout"
+        ]
+    },
+    {
+        "id": 9,
+        "question": "What is the difference between block, inline and inline-block elements?",
+        "difficulty": "medium",
+        "topic": "CSS",
+        "expected_concepts": [
+            "block",
+            "inline",
+            "inline-block"
+        ]
+    },
+    {
+        "id": 10,
+        "question": "What is CSS Flexbox?",
+        "difficulty": "easy",
+        "topic": "CSS",
+        "expected_concepts": [
+            "flexbox",
+            "one-dimensional layout",
+            "flex container"
+        ]
+    },
+    {
+        "id": 11,
+        "question": "What are the main properties used in CSS Flexbox?",
+        "difficulty": "medium",
+        "topic": "CSS",
+        "expected_concepts": [
+            "justify-content",
+            "align-items",
+            "flex-direction",
+            "flex-wrap"
+        ]
+    },
+    {
+        "id": 12,
+        "question": "What is CSS Grid?",
+        "difficulty": "easy",
+        "topic": "CSS",
+        "expected_concepts": [
+            "grid",
+            "two-dimensional layout",
+            "rows",
+            "columns"
+        ]
+    },
+    {
+        "id": 13,
+        "question": "What is the difference between Flexbox and CSS Grid?",
+        "difficulty": "medium",
+        "topic": "CSS",
+        "expected_concepts": [
+            "Flexbox",
+            "Grid",
+            "one-dimensional",
+            "two-dimensional"
+        ]
+    },
+    {
+        "id": 14,
+        "question": "What is the position property in CSS and what are its common values?",
+        "difficulty": "medium",
+        "topic": "CSS",
+        "expected_concepts": [
+            "position",
+            "static",
+            "relative",
+            "absolute",
+            "fixed",
+            "sticky"
+        ]
+    },
+    {
+        "id": 15,
+        "question": "What is the difference between relative and absolute positioning?",
+        "difficulty": "medium",
+        "topic": "CSS",
+        "expected_concepts": [
+            "relative",
+            "absolute",
+            "positioning context"
+        ]
+    },
+    {
+        "id": 16,
+        "question": "What are pseudo-classes and pseudo-elements in CSS?",
+        "difficulty": "hard",
+        "topic": "CSS",
+        "expected_concepts": [
+            "pseudo-class",
+            "pseudo-element",
+            ":hover",
+            "::before",
+            "::after"
+        ]
+    },
+    {
+        "id": 17,
+        "question": "What are media queries in CSS?",
+        "difficulty": "medium",
+        "topic": "CSS",
+        "expected_concepts": [
+            "media query",
+            "responsive design",
+            "screen size"
+        ]
+    },
+    {
+        "id": 18,
+        "question": "What is responsive web design and how can CSS implement it?",
+        "difficulty": "medium",
+        "topic": "CSS",
+        "expected_concepts": [
+            "responsive design",
+            "media queries",
+            "flexbox",
+            "grid"
+        ]
+    },
+    {
+        "id": 19,
+        "question": "What is the difference between em, rem, percentage, vh and vw units?",
+        "difficulty": "hard",
+        "topic": "CSS",
+        "expected_concepts": [
+            "relative units",
+            "em",
+            "rem",
+            "percentage",
+            "vh",
+            "vw"
+        ]
+    },
+    {
+        "id": 20,
+        "question": "What is z-index and how does stacking order work in CSS?",
+        "difficulty": "hard",
+        "topic": "CSS",
+        "expected_concepts": [
+            "z-index",
+            "stacking order",
+            "positioning"
+        ]
+    }
+]

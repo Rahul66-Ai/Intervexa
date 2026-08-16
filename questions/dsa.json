@@ -1,0 +1,236 @@
+[
+    {
+        "id": 1,
+        "question": "What is a data structure and why is it important?",
+        "difficulty": "easy",
+        "topic": "Data Structures",
+        "expected_concepts": [
+            "data structure",
+            "organization",
+            "efficient operations"
+        ]
+    },
+    {
+        "id": 2,
+        "question": "What is the difference between linear and non-linear data structures?",
+        "difficulty": "easy",
+        "topic": "Data Structures",
+        "expected_concepts": [
+            "linear",
+            "non-linear",
+            "array",
+            "tree",
+            "graph"
+        ]
+    },
+    {
+        "id": 3,
+        "question": "What is an array and what are its advantages and disadvantages?",
+        "difficulty": "easy",
+        "topic": "Data Structures",
+        "expected_concepts": [
+            "array",
+            "contiguous memory",
+            "random access"
+        ]
+    },
+    {
+        "id": 4,
+        "question": "What is a linked list?",
+        "difficulty": "easy",
+        "topic": "Data Structures",
+        "expected_concepts": [
+            "linked list",
+            "node",
+            "pointer",
+            "dynamic memory"
+        ]
+    },
+    {
+        "id": 5,
+        "question": "What is the difference between an array and a linked list?",
+        "difficulty": "medium",
+        "topic": "Data Structures",
+        "expected_concepts": [
+            "array",
+            "linked list",
+            "memory",
+            "access",
+            "insertion"
+        ]
+    },
+    {
+        "id": 6,
+        "question": "What are the different types of linked lists?",
+        "difficulty": "easy",
+        "topic": "Data Structures",
+        "expected_concepts": [
+            "singly linked list",
+            "doubly linked list",
+            "circular linked list"
+        ]
+    },
+    {
+        "id": 7,
+        "question": "What is a stack and what principle does it follow?",
+        "difficulty": "easy",
+        "topic": "Data Structures",
+        "expected_concepts": [
+            "stack",
+            "LIFO",
+            "push",
+            "pop"
+        ]
+    },
+    {
+        "id": 8,
+        "question": "What is a queue and what principle does it follow?",
+        "difficulty": "easy",
+        "topic": "Data Structures",
+        "expected_concepts": [
+            "queue",
+            "FIFO",
+            "enqueue",
+            "dequeue"
+        ]
+    },
+    {
+        "id": 9,
+        "question": "What is the difference between a stack and a queue?",
+        "difficulty": "easy",
+        "topic": "Data Structures",
+        "expected_concepts": [
+            "stack",
+            "queue",
+            "LIFO",
+            "FIFO"
+        ]
+    },
+    {
+        "id": 10,
+        "question": "What is a circular queue and why is it used?",
+        "difficulty": "medium",
+        "topic": "Data Structures",
+        "expected_concepts": [
+            "circular queue",
+            "FIFO",
+            "memory utilization"
+        ]
+    },
+    {
+        "id": 11,
+        "question": "What is a hash table and how does hashing work?",
+        "difficulty": "medium",
+        "topic": "Data Structures",
+        "expected_concepts": [
+            "hash table",
+            "hash function",
+            "key",
+            "index"
+        ]
+    },
+    {
+        "id": 12,
+        "question": "What is a collision in hashing and how can it be handled?",
+        "difficulty": "hard",
+        "topic": "Data Structures",
+        "expected_concepts": [
+            "collision",
+            "chaining",
+            "open addressing"
+        ]
+    },
+    {
+        "id": 13,
+        "question": "What is a tree data structure?",
+        "difficulty": "easy",
+        "topic": "Data Structures",
+        "expected_concepts": [
+            "tree",
+            "root",
+            "node",
+            "edge"
+        ]
+    },
+    {
+        "id": 14,
+        "question": "What is a binary tree?",
+        "difficulty": "easy",
+        "topic": "Data Structures",
+        "expected_concepts": [
+            "binary tree",
+            "node",
+            "left child",
+            "right child"
+        ]
+    },
+    {
+        "id": 15,
+        "question": "What is a Binary Search Tree?",
+        "difficulty": "medium",
+        "topic": "Data Structures",
+        "expected_concepts": [
+            "BST",
+            "left subtree",
+            "right subtree",
+            "ordering"
+        ]
+    },
+    {
+        "id": 16,
+        "question": "What are tree traversal techniques?",
+        "difficulty": "medium",
+        "topic": "Data Structures",
+        "expected_concepts": [
+            "inorder",
+            "preorder",
+            "postorder",
+            "level order"
+        ]
+    },
+    {
+        "id": 17,
+        "question": "What is a graph data structure?",
+        "difficulty": "easy",
+        "topic": "Data Structures",
+        "expected_concepts": [
+            "graph",
+            "vertex",
+            "edge"
+        ]
+    },
+    {
+        "id": 18,
+        "question": "What is the difference between BFS and DFS?",
+        "difficulty": "medium",
+        "topic": "Data Structures",
+        "expected_concepts": [
+            "BFS",
+            "DFS",
+            "queue",
+            "stack"
+        ]
+    },
+    {
+        "id": 19,
+        "question": "What is Big O notation and why is it used?",
+        "difficulty": "medium",
+        "topic": "Data Structures",
+        "expected_concepts": [
+            "Big O",
+            "time complexity",
+            "space complexity"
+        ]
+    },
+    {
+        "id": 20,
+        "question": "What is the difference between time complexity and space complexity?",
+        "difficulty": "hard",
+        "topic": "Data Structures",
+        "expected_concepts": [
+            "time complexity",
+            "space complexity",
+            "algorithm efficiency"
+        ]
+    }
+]

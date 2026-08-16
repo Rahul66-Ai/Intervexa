@@ -1,0 +1,224 @@
+[
+    {
+        "id": 1,
+        "question": "What is the C programming language and what are its main features?",
+        "difficulty": "easy",
+        "topic": "C",
+        "expected_concepts": [
+            "procedural",
+            "compiled",
+            "structured programming"
+        ]
+    },
+    {
+        "id": 2,
+        "question": "What is the difference between a compiler and an interpreter?",
+        "difficulty": "easy",
+        "topic": "C",
+        "expected_concepts": [
+            "compiler",
+            "interpreter",
+            "translation"
+        ]
+    },
+    {
+        "id": 3,
+        "question": "What are variables and constants in C?",
+        "difficulty": "easy",
+        "topic": "C",
+        "expected_concepts": [
+            "variable",
+            "constant",
+            "memory"
+        ]
+    },
+    {
+        "id": 4,
+        "question": "What are the basic data types in C?",
+        "difficulty": "easy",
+        "topic": "C",
+        "expected_concepts": [
+            "int",
+            "char",
+            "float",
+            "double"
+        ]
+    },
+    {
+        "id": 5,
+        "question": "What is the difference between declaration and definition in C?",
+        "difficulty": "medium",
+        "topic": "C",
+        "expected_concepts": [
+            "declaration",
+            "definition",
+            "memory"
+        ]
+    },
+    {
+        "id": 6,
+        "question": "What are pointers in C and why are they used?",
+        "difficulty": "medium",
+        "topic": "C",
+        "expected_concepts": [
+            "pointer",
+            "address",
+            "dereferencing"
+        ]
+    },
+    {
+        "id": 7,
+        "question": "What is a NULL pointer?",
+        "difficulty": "medium",
+        "topic": "C",
+        "expected_concepts": [
+            "NULL",
+            "pointer",
+            "invalid address"
+        ]
+    },
+    {
+        "id": 8,
+        "question": "What is the difference between an array and a pointer in C?",
+        "difficulty": "medium",
+        "topic": "C",
+        "expected_concepts": [
+            "array",
+            "pointer",
+            "memory"
+        ]
+    },
+    {
+        "id": 9,
+        "question": "What is a function in C?",
+        "difficulty": "easy",
+        "topic": "C",
+        "expected_concepts": [
+            "function",
+            "parameter",
+            "return"
+        ]
+    },
+    {
+        "id": 10,
+        "question": "What is the difference between call by value and call by reference?",
+        "difficulty": "medium",
+        "topic": "C",
+        "expected_concepts": [
+            "call by value",
+            "call by reference",
+            "pointer"
+        ]
+    },
+    {
+        "id": 11,
+        "question": "What is recursion in C?",
+        "difficulty": "medium",
+        "topic": "C",
+        "expected_concepts": [
+            "recursion",
+            "base condition",
+            "function call"
+        ]
+    },
+    {
+        "id": 12,
+        "question": "What are structures in C?",
+        "difficulty": "easy",
+        "topic": "C",
+        "expected_concepts": [
+            "structure",
+            "user-defined data type",
+            "members"
+        ]
+    },
+    {
+        "id": 13,
+        "question": "What is the difference between a structure and a union in C?",
+        "difficulty": "medium",
+        "topic": "C",
+        "expected_concepts": [
+            "structure",
+            "union",
+            "memory"
+        ]
+    },
+    {
+        "id": 14,
+        "question": "What are dynamic memory allocation functions in C?",
+        "difficulty": "hard",
+        "topic": "C",
+        "expected_concepts": [
+            "malloc",
+            "calloc",
+            "realloc",
+            "free"
+        ]
+    },
+    {
+        "id": 15,
+        "question": "What is a memory leak in C?",
+        "difficulty": "hard",
+        "topic": "C",
+        "expected_concepts": [
+            "dynamic memory",
+            "memory leak",
+            "free"
+        ]
+    },
+    {
+        "id": 16,
+        "question": "What is a dangling pointer?",
+        "difficulty": "hard",
+        "topic": "C",
+        "expected_concepts": [
+            "dangling pointer",
+            "deallocated memory"
+        ]
+    },
+    {
+        "id": 17,
+        "question": "What is the difference between stack memory and heap memory in C?",
+        "difficulty": "hard",
+        "topic": "C",
+        "expected_concepts": [
+            "stack",
+            "heap",
+            "memory allocation"
+        ]
+    },
+    {
+        "id": 18,
+        "question": "What is a preprocessor in C?",
+        "difficulty": "medium",
+        "topic": "C",
+        "expected_concepts": [
+            "preprocessor",
+            "#include",
+            "#define"
+        ]
+    },
+    {
+        "id": 19,
+        "question": "What are header files in C?",
+        "difficulty": "easy",
+        "topic": "C",
+        "expected_concepts": [
+            "header file",
+            "declaration",
+            "library"
+        ]
+    },
+    {
+        "id": 20,
+        "question": "What is the difference between static and dynamic memory allocation?",
+        "difficulty": "hard",
+        "topic": "C",
+        "expected_concepts": [
+            "static allocation",
+            "dynamic allocation",
+            "heap",
+            "stack"
+        ]
+    }
+]

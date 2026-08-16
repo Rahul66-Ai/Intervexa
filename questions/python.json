@@ -1,0 +1,225 @@
+[
+    {
+        "id": 1,
+        "question": "What is Python and what are its main features?",
+        "difficulty": "easy",
+        "topic": "Python",
+        "expected_concepts": [
+            "high-level language",
+            "interpreted",
+            "dynamically typed",
+            "object-oriented"
+        ]
+    },
+    {
+        "id": 2,
+        "question": "What is the difference between a list and a tuple in Python?",
+        "difficulty": "easy",
+        "topic": "Python",
+        "expected_concepts": [
+            "mutable",
+            "immutable",
+            "list",
+            "tuple"
+        ]
+    },
+    {
+        "id": 3,
+        "question": "What is the difference between == and is in Python?",
+        "difficulty": "medium",
+        "topic": "Python",
+        "expected_concepts": [
+            "value comparison",
+            "identity comparison"
+        ]
+    },
+    {
+        "id": 4,
+        "question": "What are mutable and immutable objects in Python?",
+        "difficulty": "medium",
+        "topic": "Python",
+        "expected_concepts": [
+            "mutable",
+            "immutable",
+            "object"
+        ]
+    },
+    {
+        "id": 5,
+        "question": "What is a dictionary in Python and how does it work?",
+        "difficulty": "medium",
+        "topic": "Python",
+        "expected_concepts": [
+            "key",
+            "value",
+            "hash table"
+        ]
+    },
+    {
+        "id": 6,
+        "question": "What are Python functions and why are they used?",
+        "difficulty": "easy",
+        "topic": "Python",
+        "expected_concepts": [
+            "function",
+            "parameter",
+            "return",
+            "reusability"
+        ]
+    },
+    {
+        "id": 7,
+        "question": "What is the difference between local and global variables in Python?",
+        "difficulty": "easy",
+        "topic": "Python",
+        "expected_concepts": [
+            "scope",
+            "local",
+            "global"
+        ]
+    },
+    {
+        "id": 8,
+        "question": "What are *args and **kwargs in Python?",
+        "difficulty": "medium",
+        "topic": "Python",
+        "expected_concepts": [
+            "variable arguments",
+            "*args",
+            "**kwargs"
+        ]
+    },
+    {
+        "id": 9,
+        "question": "What is a lambda function in Python?",
+        "difficulty": "medium",
+        "topic": "Python",
+        "expected_concepts": [
+            "anonymous function",
+            "lambda",
+            "expression"
+        ]
+    },
+    {
+        "id": 10,
+        "question": "What is list comprehension in Python?",
+        "difficulty": "easy",
+        "topic": "Python",
+        "expected_concepts": [
+            "list comprehension",
+            "iteration",
+            "expression"
+        ]
+    },
+    {
+        "id": 11,
+        "question": "What is exception handling in Python?",
+        "difficulty": "easy",
+        "topic": "Python",
+        "expected_concepts": [
+            "try",
+            "except",
+            "finally",
+            "exception"
+        ]
+    },
+    {
+        "id": 12,
+        "question": "What is the difference between shallow copy and deep copy in Python?",
+        "difficulty": "hard",
+        "topic": "Python",
+        "expected_concepts": [
+            "shallow copy",
+            "deep copy",
+            "nested objects"
+        ]
+    },
+    {
+        "id": 13,
+        "question": "What are classes and objects in Python?",
+        "difficulty": "easy",
+        "topic": "Python",
+        "expected_concepts": [
+            "class",
+            "object",
+            "instance"
+        ]
+    },
+    {
+        "id": 14,
+        "question": "What is inheritance in Python?",
+        "difficulty": "medium",
+        "topic": "Python",
+        "expected_concepts": [
+            "inheritance",
+            "parent class",
+            "child class"
+        ]
+    },
+    {
+        "id": 15,
+        "question": "What is polymorphism in Python?",
+        "difficulty": "medium",
+        "topic": "Python",
+        "expected_concepts": [
+            "polymorphism",
+            "method overriding"
+        ]
+    },
+    {
+        "id": 16,
+        "question": "What is a decorator in Python?",
+        "difficulty": "hard",
+        "topic": "Python",
+        "expected_concepts": [
+            "decorator",
+            "function",
+            "wrapper"
+        ]
+    },
+    {
+        "id": 17,
+        "question": "What is an iterator in Python?",
+        "difficulty": "medium",
+        "topic": "Python",
+        "expected_concepts": [
+            "iterator",
+            "__iter__",
+            "__next__"
+        ]
+    },
+    {
+        "id": 18,
+        "question": "What is a generator in Python and how is it different from a normal function?",
+        "difficulty": "hard",
+        "topic": "Python",
+        "expected_concepts": [
+            "generator",
+            "yield",
+            "lazy evaluation"
+        ]
+    },
+    {
+        "id": 19,
+        "question": "How does Python manage memory?",
+        "difficulty": "hard",
+        "topic": "Python",
+        "expected_concepts": [
+            "memory management",
+            "garbage collection",
+            "reference counting"
+        ]
+    },
+    {
+        "id": 20,
+        "question": "What is the Global Interpreter Lock (GIL) in Python?",
+        "difficulty": "hard",
+        "topic": "Python",
+        "expected_concepts": [
+            "GIL",
+            "thread",
+            "CPython",
+            "execution"
+        ]
+    }
+]

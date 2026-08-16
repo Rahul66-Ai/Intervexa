@@ -1,0 +1,229 @@
+[
+    {
+        "id": 1,
+        "question": "What is C++ and how is it different from C?",
+        "difficulty": "easy",
+        "topic": "C++",
+        "expected_concepts": [
+            "object-oriented",
+            "classes",
+            "C compatibility"
+        ]
+    },
+    {
+        "id": 2,
+        "question": "What are the main features of C++?",
+        "difficulty": "easy",
+        "topic": "C++",
+        "expected_concepts": [
+            "object-oriented programming",
+            "encapsulation",
+            "inheritance",
+            "polymorphism"
+        ]
+    },
+    {
+        "id": 3,
+        "question": "What is a class in C++?",
+        "difficulty": "easy",
+        "topic": "C++",
+        "expected_concepts": [
+            "class",
+            "data members",
+            "member functions"
+        ]
+    },
+    {
+        "id": 4,
+        "question": "What is an object in C++?",
+        "difficulty": "easy",
+        "topic": "C++",
+        "expected_concepts": [
+            "object",
+            "instance",
+            "class"
+        ]
+    },
+    {
+        "id": 5,
+        "question": "What is encapsulation in C++?",
+        "difficulty": "medium",
+        "topic": "C++",
+        "expected_concepts": [
+            "encapsulation",
+            "data hiding",
+            "class"
+        ]
+    },
+    {
+        "id": 6,
+        "question": "What is inheritance in C++?",
+        "difficulty": "medium",
+        "topic": "C++",
+        "expected_concepts": [
+            "inheritance",
+            "base class",
+            "derived class"
+        ]
+    },
+    {
+        "id": 7,
+        "question": "What are the different types of inheritance in C++?",
+        "difficulty": "medium",
+        "topic": "C++",
+        "expected_concepts": [
+            "single",
+            "multiple",
+            "multilevel",
+            "hierarchical",
+            "hybrid"
+        ]
+    },
+    {
+        "id": 8,
+        "question": "What is polymorphism in C++?",
+        "difficulty": "medium",
+        "topic": "C++",
+        "expected_concepts": [
+            "polymorphism",
+            "compile-time",
+            "runtime"
+        ]
+    },
+    {
+        "id": 9,
+        "question": "What is function overloading in C++?",
+        "difficulty": "medium",
+        "topic": "C++",
+        "expected_concepts": [
+            "function overloading",
+            "same function name",
+            "different parameters"
+        ]
+    },
+    {
+        "id": 10,
+        "question": "What is operator overloading in C++?",
+        "difficulty": "medium",
+        "topic": "C++",
+        "expected_concepts": [
+            "operator overloading",
+            "operator",
+            "user-defined types"
+        ]
+    },
+    {
+        "id": 11,
+        "question": "What is a constructor in C++?",
+        "difficulty": "easy",
+        "topic": "C++",
+        "expected_concepts": [
+            "constructor",
+            "initialization",
+            "object"
+        ]
+    },
+    {
+        "id": 12,
+        "question": "What is a destructor in C++?",
+        "difficulty": "medium",
+        "topic": "C++",
+        "expected_concepts": [
+            "destructor",
+            "object destruction",
+            "cleanup"
+        ]
+    },
+    {
+        "id": 13,
+        "question": "What is the difference between a constructor and a destructor?",
+        "difficulty": "medium",
+        "topic": "C++",
+        "expected_concepts": [
+            "constructor",
+            "destructor",
+            "initialization",
+            "cleanup"
+        ]
+    },
+    {
+        "id": 14,
+        "question": "What is a virtual function in C++?",
+        "difficulty": "hard",
+        "topic": "C++",
+        "expected_concepts": [
+            "virtual function",
+            "runtime polymorphism",
+            "dynamic dispatch"
+        ]
+    },
+    {
+        "id": 15,
+        "question": "What is a pure virtual function and an abstract class?",
+        "difficulty": "hard",
+        "topic": "C++",
+        "expected_concepts": [
+            "pure virtual function",
+            "abstract class",
+            "virtual"
+        ]
+    },
+    {
+        "id": 16,
+        "question": "What is the difference between a pointer and a reference in C++?",
+        "difficulty": "hard",
+        "topic": "C++",
+        "expected_concepts": [
+            "pointer",
+            "reference",
+            "memory address"
+        ]
+    },
+    {
+        "id": 17,
+        "question": "What is the this pointer in C++?",
+        "difficulty": "medium",
+        "topic": "C++",
+        "expected_concepts": [
+            "this pointer",
+            "current object",
+            "member function"
+        ]
+    },
+    {
+        "id": 18,
+        "question": "What is the Standard Template Library (STL) in C++?",
+        "difficulty": "medium",
+        "topic": "C++",
+        "expected_concepts": [
+            "STL",
+            "containers",
+            "algorithms",
+            "iterators"
+        ]
+    },
+    {
+        "id": 19,
+        "question": "What is the difference between vector, list and deque in C++?",
+        "difficulty": "hard",
+        "topic": "C++",
+        "expected_concepts": [
+            "vector",
+            "list",
+            "deque",
+            "container"
+        ]
+    },
+    {
+        "id": 20,
+        "question": "What are smart pointers in modern C++?",
+        "difficulty": "hard",
+        "topic": "C++",
+        "expected_concepts": [
+            "smart pointer",
+            "unique_ptr",
+            "shared_ptr",
+            "memory management"
+        ]
+    }
+]
