@@ -21,6 +21,8 @@ class InterviewSession:
 
         self.pending_concepts = []
 
+        self.follow_up_pending = False
+
 
     def get_question_key(self, question):
         """
@@ -41,12 +43,24 @@ class InterviewSession:
         if not difficulty:
             return "medium"
 
-        difficulty = str(difficulty).lower().strip()
+        difficulty = str(
+            difficulty
+        ).lower().strip()
 
-        if difficulty in ["easy", "basic", "beginner"]:
+        if difficulty in [
+            "easy",
+            "basic",
+            "beginner"
+        ]:
+
             return "easy"
 
-        if difficulty in ["hard", "difficult", "advanced"]:
+        if difficulty in [
+            "hard",
+            "difficult",
+            "advanced"
+        ]:
+
             return "hard"
 
         return "medium"
@@ -59,17 +73,21 @@ class InterviewSession:
         """
 
         if not self.scores:
+
             return "medium"
 
         last_score = self.scores[-1]
 
         if last_score <= 4:
+
             return "easy"
 
         elif last_score <= 7:
+
             return "medium"
 
         else:
+
             return "hard"
 
 
@@ -82,14 +100,55 @@ class InterviewSession:
 
         for item in self.answers:
 
-            question = item.get("question")
+            question = item.get(
+                "question"
+            )
 
             if question:
-                previous_questions.append(
-                    question.get("question", "")
+
+                question_text = question.get(
+                    "question",
+                    ""
                 )
 
+                if question_text:
+
+                    previous_questions.append(
+                        question_text
+                    )
+
         return previous_questions
+
+
+    def get_previous_topics(self):
+        """
+        Return topics of previously asked questions.
+        """
+
+        previous_topics = []
+
+        for item in self.answers:
+
+            question = item.get(
+                "question"
+            )
+
+            if question:
+
+                topic = question.get(
+                    "topic"
+                )
+
+                if (
+                    topic
+                    and topic not in previous_topics
+                ):
+
+                    previous_topics.append(
+                        topic
+                    )
+
+        return previous_topics
 
 
     def get_ai_question(self):
@@ -97,12 +156,43 @@ class InterviewSession:
         Generate one question using Gemini AI.
         """
 
-        previous_questions = self.get_previous_questions()
+        previous_questions = (
+            self.get_previous_questions()
+        )
+
+        previous_topics = (
+            self.get_previous_topics()
+        )
+
+        previous_topic = None
+
+        if self.current_question:
+
+            previous_topic = self.current_question.get(
+                "topic"
+            )
+
+
+        # ----------------------------------------------------
+        # USE FOLLOW-UP ONLY WHEN PENDING
+        # ----------------------------------------------------
+
+        follow_up_concepts = []
+
+        if self.follow_up_pending:
+
+            follow_up_concepts = (
+                self.pending_concepts
+            )
+
 
         question = generate_ai_question(
             skills=self.skills,
             difficulty=self.current_difficulty,
-            previous_questions=previous_questions
+            previous_questions=previous_questions,
+            previous_topics=previous_topics,
+            follow_up_concepts=follow_up_concepts,
+            previous_topic=previous_topic
         )
 
         return question
@@ -119,9 +209,13 @@ class InterviewSession:
 
         for skill in self.skills:
 
-            questions = load_questions(skill)
+            questions = load_questions(
+                skill
+            )
 
-            all_questions.extend(questions)
+            all_questions.extend(
+                questions
+            )
 
         return all_questions
 
@@ -139,13 +233,20 @@ class InterviewSession:
 
         for question in questions:
 
-            question_difficulty = self.normalize_difficulty(
-                question.get("difficulty")
+            question_difficulty = (
+                self.normalize_difficulty(
+                    question.get("difficulty")
+                )
             )
 
-            if question_difficulty == difficulty:
+            if (
+                question_difficulty
+                == difficulty
+            ):
 
-                matching_questions.append(question)
+                matching_questions.append(
+                    question
+                )
 
         return matching_questions
 
@@ -159,24 +260,55 @@ class InterviewSession:
             self.calculate_next_difficulty()
         )
 
+
+        # ====================================================
+        # AI QUESTION GENERATION
+        # ====================================================
+
         try:
 
-            question = self.get_ai_question()
-
-            question_key = self.get_question_key(
-                question
+            question = (
+                self.get_ai_question()
             )
 
-            # Safety check against duplicate question IDs
-            if question_key not in self.questions_asked:
+            question_key = (
+                self.get_question_key(
+                    question
+                )
+            )
 
-                self.current_question = question
+
+            # ------------------------------------------------
+            # Check duplicate question
+            # ------------------------------------------------
+
+            if (
+                question_key
+                not in self.questions_asked
+            ):
+
+                self.current_question = (
+                    question
+                )
 
                 self.questions_asked.append(
                     question_key
                 )
 
+
+                # ------------------------------------------------
+                # FOLLOW-UP HAS NOW BEEN USED
+                # ------------------------------------------------
+
+                if self.follow_up_pending:
+
+                    self.follow_up_pending = False
+
+                    self.pending_concepts = []
+
+
                 return question
+
 
         except Exception as error:
 
@@ -186,31 +318,43 @@ class InterviewSession:
             )
 
 
-        # -----------------------------------------
+        # ====================================================
         # FALLBACK TO OLD QUESTION BANK
-        # -----------------------------------------
+        # ====================================================
 
         available_questions = (
             self.get_available_questions()
         )
 
+
         remaining_questions = []
 
         for question in available_questions:
 
-            question_key = self.get_question_key(
-                question
+            question_key = (
+                self.get_question_key(
+                    question
+                )
             )
 
-            if question_key not in self.questions_asked:
+            if (
+                question_key
+                not in self.questions_asked
+            ):
 
-                remaining_questions.append(question)
+                remaining_questions.append(
+                    question
+                )
 
 
         if not remaining_questions:
 
             return None
 
+
+        # ====================================================
+        # MATCH DIFFICULTY
+        # ====================================================
 
         matching_questions = (
             self.get_questions_by_difficulty(
@@ -222,24 +366,76 @@ class InterviewSession:
 
         if not matching_questions:
 
-            matching_questions = remaining_questions
+            matching_questions = (
+                remaining_questions
+            )
 
 
-        # Random topic selection
+        # ====================================================
+        # AVOID REPEATING PREVIOUS TOPIC
+        # ====================================================
+
+        previous_topics = (
+            self.get_previous_topics()
+        )
+
+
+        different_topic_questions = []
+
+        for question in matching_questions:
+
+            topic = question.get(
+                "topic"
+            )
+
+            if topic not in previous_topics:
+
+                different_topic_questions.append(
+                    question
+                )
+
+
+        if different_topic_questions:
+
+            matching_questions = (
+                different_topic_questions
+            )
+
+
+        # ====================================================
+        # SELECT RANDOM QUESTION
+        # ====================================================
+
         question = random.choice(
             matching_questions
         )
 
 
-        self.current_question = question
-
-        question_key = self.get_question_key(
+        self.current_question = (
             question
         )
+
+
+        question_key = (
+            self.get_question_key(
+                question
+            )
+        )
+
 
         self.questions_asked.append(
             question_key
         )
+
+
+        # ----------------------------------------------------
+        # FOLLOW-UP IS CONSIDERED USED
+        # ----------------------------------------------------
+
+        self.follow_up_pending = False
+
+        self.pending_concepts = []
+
 
         return question
 
@@ -255,6 +451,11 @@ class InterviewSession:
         and missing concepts.
         """
 
+        missing_concept = (
+            missing_concept or []
+        )
+
+
         self.answers.append({
 
             "question":
@@ -267,14 +468,36 @@ class InterviewSession:
                 score,
 
             "missing_concept":
-                (missing_concept or [])
+                missing_concept
+
         })
 
-        self.scores.append(score)
 
-        self.pending_concepts = (
-            missing_concept or []
+        self.scores.append(
+            score
         )
+
+
+        # ====================================================
+        # FOLLOW-UP DECISION
+        # ====================================================
+
+        if (
+            score <= 6
+            and missing_concept
+        ):
+
+            self.pending_concepts = (
+                missing_concept
+            )
+
+            self.follow_up_pending = True
+
+        else:
+
+            self.pending_concepts = []
+
+            self.follow_up_pending = False
 
 
     def get_average_score(self):
@@ -283,9 +506,12 @@ class InterviewSession:
         """
 
         if not self.scores:
+
             return 0
 
+
         return round(
-            sum(self.scores) / len(self.scores),
+            sum(self.scores)
+            / len(self.scores),
             2
         )

@@ -7,7 +7,7 @@ import subprocess
 from streamlit_mic_recorder import mic_recorder
 
 from backend.utils.resume_parser import extract_resume_text
-from backend.utils.skill import detect_skills
+from backend.utils.skill import detect_skills, detect_ai_skills
 from backend.utils.interview_engine import InterviewSession
 from backend.utils.answer_evaluator import evaluate_answer
 
@@ -84,21 +84,6 @@ if "completed" not in st.session_state:
     st.session_state.completed = False
 
 
-# ------------------------------------------------------------
-# IMPORTANT VOICE STATE
-# ------------------------------------------------------------
-#
-# Voice is NOT spoken directly during normal rendering.
-#
-# Instead:
-#
-# pending_voice = text that should be spoken once.
-#
-# After speaking, we immediately clear it.
-#
-# This prevents duplicate voice caused by Streamlit reruns.
-# ------------------------------------------------------------
-
 if "pending_voice" not in st.session_state:
     st.session_state.pending_voice = None
 
@@ -109,23 +94,15 @@ if "pending_voice" not in st.session_state:
 
 if st.session_state.pending_voice:
 
-    text_to_speak = st.session_state.pending_voice
-
-    # Clear BEFORE speaking.
-    # Therefore another Streamlit rerun will not speak it again.
+    text_to_speak = (
+        st.session_state.pending_voice
+    )
 
     st.session_state.pending_voice = None
 
     speak_text(
         text_to_speak
     )
-
-
-# ============================================================
-# CONSTANT
-# ============================================================
-
-TOTAL_QUESTIONS = 5
 
 
 # ============================================================
@@ -180,7 +157,6 @@ if (
                 uploaded_file.name
             ).suffix
 
-
             with tempfile.NamedTemporaryFile(
                 delete=False,
                 suffix=suffix
@@ -203,12 +179,30 @@ if (
 
 
             # ------------------------------------------------
-            # DETECT SKILLS
+            # AI SKILL DETECTION
             # ------------------------------------------------
 
-            skills = detect_skills(
-                resume_text
-            )
+            try:
+
+                skills = detect_ai_skills(
+                    resume_text
+                )
+
+            except Exception as e:
+
+                st.warning(
+                    "AI skill detection failed. "
+                    "Using basic skill detection instead."
+                )
+
+                print(
+                    "AI skill detection error:",
+                    e
+                )
+
+                skills = detect_skills(
+                    resume_text
+                )
 
 
         # ----------------------------------------------------
@@ -218,7 +212,7 @@ if (
         if not skills:
 
             st.error(
-                "No supported technical skills "
+                "No technical skills "
                 "were detected in your resume."
             )
 
@@ -253,36 +247,34 @@ if (
             )
 
 
-            st.session_state.question = (
-                first_question
-            )
-
-
-            st.session_state.question_number = 1
-
-
-            st.session_state.interview_started = True
-
-
-            st.session_state.completed = False
-
-
-            # ------------------------------------------------
-            # QUEUE FIRST QUESTION FOR VOICE
-            # ------------------------------------------------
-
             if first_question:
+
+                st.session_state.question = (
+                    first_question
+                )
+
+                st.session_state.question_number = 1
+
+                st.session_state.interview_started = True
+
+                st.session_state.completed = False
+
+
+                # ------------------------------------------------
+                # QUEUE FIRST QUESTION FOR VOICE
+                # ------------------------------------------------
 
                 st.session_state.pending_voice = (
                     first_question["question"]
                 )
 
+                st.rerun()
 
-            # ------------------------------------------------
-            # RERUN
-            # ------------------------------------------------
+            else:
 
-            st.rerun()
+                st.error(
+                    "Could not generate the first interview question."
+                )
 
 
 # ============================================================
@@ -333,8 +325,21 @@ if (
     st.write(
         f"### Question "
         f"{st.session_state.question_number}"
-        f"/{TOTAL_QUESTIONS}"
     )
+
+
+    # ========================================================
+    # FOLLOW-UP INDICATOR
+    # ========================================================
+
+    if (
+        st.session_state.session
+        and st.session_state.session.follow_up_pending
+    ):
+
+        st.warning(
+            "🔄 Follow-up Question"
+        )
 
 
     # ========================================================
@@ -377,6 +382,24 @@ if (
         speak_text(
             question["question"]
         )
+
+
+    # ========================================================
+    # END INTERVIEW BUTTON
+    # ========================================================
+
+    if st.button(
+        "🛑 End Interview"
+    ):
+
+        st.session_state.completed = True
+
+        st.session_state.pending_voice = (
+            "The interview has been ended. "
+            "Here is your final result."
+        )
+
+        st.rerun()
 
 
     # ========================================================
@@ -661,46 +684,47 @@ if (
 
 
             # =================================================
-            # CHECK IF INTERVIEW IS COMPLETE
+            # CHECK WHETHER FOLLOW-UP WAS CREATED
             # =================================================
 
-            if (
-                st.session_state.question_number
-                >= TOTAL_QUESTIONS
-            ):
+            follow_up_was_requested = (
+                st.session_state.session.follow_up_pending
+            )
 
-                # ---------------------------------------------
-                # LAST QUESTION
-                # ---------------------------------------------
+
+            # =================================================
+            # GET NEXT AI QUESTION
+            # =================================================
+
+            next_question = (
+                st.session_state.session
+                .get_next_question()
+            )
+
+
+            # ------------------------------------------------
+            # SAFETY CHECK
+            # ------------------------------------------------
+
+            if not next_question:
+
+                st.warning(
+                    "No more interview questions "
+                    "could be generated."
+                )
 
                 st.session_state.completed = True
-
-
-                # ---------------------------------------------
-                # SPEAK FINAL FEEDBACK ONLY
-                # ---------------------------------------------
 
                 st.session_state.pending_voice = (
                     voice_feedback
                     + " "
-                    + "The interview is now complete."
+                    + "The interview has ended."
                 )
-
 
                 st.rerun()
 
 
             else:
-
-                # =================================================
-                # GET NEXT QUESTION
-                # =================================================
-
-                next_question = (
-                    st.session_state.session
-                    .get_next_question()
-                )
-
 
                 st.session_state.question = (
                     next_question
@@ -713,33 +737,30 @@ if (
                 # =================================================
                 # ONE COMBINED VOICE
                 # =================================================
-                #
-                # IMPORTANT:
-                #
-                # We speak feedback + next question
-                # together in ONE voice process.
-                #
-                # This prevents:
-                #
-                # Feedback voice
-                #       +
-                # Question voice
-                #
-                # from overlapping.
-                #
-                # =================================================
 
                 next_question_text = (
                     next_question["question"]
                 )
 
 
-                combined_voice = (
-                    voice_feedback
-                    + " "
-                    + "Now, next question. "
-                    + next_question_text
-                )
+                if follow_up_was_requested:
+
+                    combined_voice = (
+                        voice_feedback
+                        + " "
+                        + "Let's clarify that concept "
+                        + "with a follow-up question. "
+                        + next_question_text
+                    )
+
+                else:
+
+                    combined_voice = (
+                        voice_feedback
+                        + " "
+                        + "Now, next question. "
+                        + next_question_text
+                    )
 
 
                 # ------------------------------------------------
@@ -785,30 +806,34 @@ if st.session_state.completed:
     # AVERAGE SCORE
     # ------------------------------------------------
 
-    st.metric(
-        "Average Score",
-        f"{session.get_average_score()}/10"
-    )
+    if session and session.scores:
+
+        st.metric(
+            "Average Score",
+            f"{session.get_average_score()}/10"
+        )
 
 
     # ------------------------------------------------
     # QUESTION SCORES
     # ------------------------------------------------
 
-    st.write(
-        "### Question Scores"
-    )
-
-
-    for index, score in enumerate(
-        session.scores,
-        start=1
-    ):
+    if session and session.scores:
 
         st.write(
-            f"Question {index}: "
-            f"{score}/10"
+            "### Question Scores"
         )
+
+
+        for index, score in enumerate(
+            session.scores,
+            start=1
+        ):
+
+            st.write(
+                f"Question {index}: "
+                f"{score}/10"
+            )
 
 
     # ------------------------------------------------
